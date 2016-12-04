@@ -3,5 +3,6 @@
 Thumbs.db
 .Trashes
 
-# Build files #
+# Project files #
 Build
+xcuserdata/
