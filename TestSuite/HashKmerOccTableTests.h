@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/HashKmerOccTable.h"
+#include "../Echo/HashKmerOccTable.h"
 
 class HashKmerOccTableTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(HashKmerOccTableTests);

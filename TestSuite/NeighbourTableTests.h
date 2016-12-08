@@ -13,8 +13,8 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/NeighbourTable.h"
-#include "../EchoErrorCorrection/NeighbourOccurrence.h"
+#include "../Echo/NeighbourTable.h"
+#include "../Echo/NeighbourOccurrence.h"
 
 class NeighbourTableTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(NeighbourTableTests);

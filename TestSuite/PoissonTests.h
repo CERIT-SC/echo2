@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/Poisson.h"
+#include "../Echo/Poisson.h"
 
 class PoissonTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(PoissonTests);

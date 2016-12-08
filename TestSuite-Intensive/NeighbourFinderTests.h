@@ -19,14 +19,14 @@ using namespace std;
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/NeighbourTable.h"
-#include "../EchoErrorCorrection/NeighbourFinder.h"
-#include "../EchoErrorCorrection/RandomisedAccess.h"
-#include "../EchoErrorCorrection/Sequence.h"
-#include "../EchoErrorCorrection/SequenceFileLoader.h"
-#include "../EchoErrorCorrection/HashComputation.h"
-#include "../EchoErrorCorrection/HashKmerOccTable.h"
-#include "../EchoErrorCorrection/NeighbourOccurrence.h"
+#include "../Echo/NeighbourTable.h"
+#include "../Echo/NeighbourFinder.h"
+#include "../Echo/RandomisedAccess.h"
+#include "../Echo/Sequence.h"
+#include "../Echo/SequenceFileLoader.h"
+#include "../Echo/HashComputation.h"
+#include "../Echo/HashKmerOccTable.h"
+#include "../Echo/NeighbourOccurrence.h"
 
 class NeighbourFinderTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(NeighbourFinderTests);

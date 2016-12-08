@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/DynamicArray.h"
+#include "../Echo/DynamicArray.h"
 
 class DynamicArrayTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(DynamicArrayTests);

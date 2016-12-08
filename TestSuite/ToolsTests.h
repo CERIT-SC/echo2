@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/Tools.h"
+#include "../Echo/Tools.h"
 
 class N44MatrixTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(N44MatrixTests);
@@ -35,10 +35,10 @@ public:
 };
 
 
-#include "../EchoErrorCorrection/RandomisedAccess.h"
-#include "../EchoErrorCorrection/NeighbourTable.h"
-#include "../EchoErrorCorrection/HashKmerOccTable.h"
-#include "../EchoErrorCorrection/Sequence.h"
+#include "../Echo/RandomisedAccess.h"
+#include "../Echo/NeighbourTable.h"
+#include "../Echo/HashKmerOccTable.h"
+#include "../Echo/Sequence.h"
 
 class GetOverapInfoTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(GetOverapInfoTests);

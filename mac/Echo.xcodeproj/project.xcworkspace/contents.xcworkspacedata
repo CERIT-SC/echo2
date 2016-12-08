@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:EchoErrorCorrection.xcodeproj">
+      location = "self:/Users/Tenpony/Documents/Repositories/ECHO 2 corrector/mac/Echo.xcodeproj">
    </FileRef>
 </Workspace>

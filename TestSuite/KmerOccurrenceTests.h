@@ -14,7 +14,7 @@ using namespace std;
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/KmerOccurrence.h"
+#include "../Echo/KmerOccurrence.h"
 
 #define UNS_CHAR_MAX static_cast<unsigned>(numeric_limits<unsigned char>::max())
 #define UNS_SHORT_MAX static_cast<unsigned>(numeric_limits<unsigned short>::max())

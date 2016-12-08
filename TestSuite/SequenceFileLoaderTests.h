@@ -13,7 +13,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../EchoErrorCorrection/SequenceFileLoader.h"
+#include "../Echo/SequenceFileLoader.h"
 
 class SequenceFileLoaderTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(SequenceFileLoaderTests);
