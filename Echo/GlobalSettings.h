@@ -10,7 +10,7 @@
 #define EchoErrorCorrection_GlobalSettings_h
 
 #define APPLICATION_NAME_STRING     "Echo Error Correction"
-#define APPLICATION_VERSION_STRING  "2.1.0 (build)"
+#define APPLICATION_VERSION_STRING  "2.0.0"
 
 #define RETURN_SUCCESS        0
 #define RETURN_INC_OPT        1
