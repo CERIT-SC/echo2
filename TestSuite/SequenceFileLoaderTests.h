@@ -20,6 +20,7 @@ class SequenceFileLoaderTests : public CppUnit::TestFixture {
     CPPUNIT_TEST(areAllFilesForTestPrepared);
     CPPUNIT_TEST(emptyLoaderTest);
     CPPUNIT_TEST(loadStandardFileTest);
+    CPPUNIT_TEST(loadStandardFileWithEmptyLines);
     CPPUNIT_TEST(loadFastqFileTest);
     CPPUNIT_TEST(loadNonExistingFileTest);
     CPPUNIT_TEST(loadCorruptedFileTest);
@@ -40,6 +41,7 @@ public:
     void areAllFilesForTestPrepared();
     void emptyLoaderTest();
     void loadStandardFileTest();
+    void loadStandardFileWithEmptyLines();
     void loadFastqFileTest();
     void loadNonExistingFileTest();
     void loadCorruptedFileTest();

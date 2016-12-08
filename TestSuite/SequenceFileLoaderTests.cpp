@@ -28,10 +28,11 @@ void SequenceFileLoaderTests::tearDown() {}
 
 void SequenceFileLoaderTests::areAllFilesForTestPrepared() {
     string message = "Test file missing";
-    ifstream f1(path + "correct.txt"), f2(path + "correct.fastq"),
-        f3(path + "corrupted.txt"), f4(path + "corrupted2.txt"),
-        f5(path + "corrupted.fastq"), f6(path + "corrupted2.fastq"),
-        f7(path + "corrupted3.fastq"), f8(path + "corrupted4.fastq");
+    ifstream f1(path + "correct.txt"), f2(path + "correct2.txt"),
+        f3(path + "correct.fastq"), f4(path + "corrupted.txt"),
+        f5(path + "corrupted2.txt"), f6(path + "corrupted.fastq"),
+        f7(path + "corrupted2.fastq"), f8(path + "corrupted3.fastq"),
+        f9(path + "corrupted4.fastq");
     
     CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f1.is_open());
     CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f2.is_open());
@@ -41,6 +42,7 @@ void SequenceFileLoaderTests::areAllFilesForTestPrepared() {
     CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f6.is_open());
     CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f7.is_open());
     CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f8.is_open());
+    CPPUNIT_ASSERT_EQUAL_MESSAGE(message, true, f9.is_open());
 }
 
 void SequenceFileLoaderTests::emptyLoaderTest() {
@@ -60,7 +62,21 @@ void SequenceFileLoaderTests::loadStandardFileTest() {
     CPPUNIT_ASSERT_EQUAL(first, seqArray.front().getAsString());
     CPPUNIT_ASSERT_EQUAL(line53, seqArray[52].getAsString());
     CPPUNIT_ASSERT_EQUAL(last, seqArray.back().getAsString());
+}
+
+void SequenceFileLoaderTests::loadStandardFileWithEmptyLines() {
+    //correct2.txt  has empty lines at the beginning, at the end and in the middle
+    //              but contains same sequences as correct.txt
     
+    CPPUNIT_ASSERT_NO_THROW(loader.load(path + "correct2.txt", seqArray););
+    
+    CPPUNIT_ASSERT_EQUAL(static_cast<SIZE>(123), seqArray.size());
+    string first = "GGTACTTTTATTTTCGGAGCTGTGGGCAACATTCAAATACTAAGCGAAGCTCCGGCATGAAGTGCTTATGGACTGT";
+    string line53 = "GTCGCATTAGCAATAAGGCTACCATATCTTGTGTGCTCTATAGCAAACAACAATCCATACTGGAGACGGAACGGAG";
+    string last = "ATGAAATGTGGGTGAAAAAAGTAAGAAAATCATAGCAGATGGATATAGAACGAGTAACCATTTTAGCCAAGAACAA";
+    CPPUNIT_ASSERT_EQUAL(first, seqArray.front().getAsString());
+    CPPUNIT_ASSERT_EQUAL(line53, seqArray[52].getAsString());
+    CPPUNIT_ASSERT_EQUAL(last, seqArray.back().getAsString());
 }
 
 void SequenceFileLoaderTests::loadFastqFileTest() {
