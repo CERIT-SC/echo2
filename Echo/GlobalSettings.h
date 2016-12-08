@@ -9,7 +9,7 @@
 #ifndef EchoErrorCorrection_GlobalSettings_h
 #define EchoErrorCorrection_GlobalSettings_h
 
-#define APPLICATION_NAME_STRING     "Echo Error Correction"
+#define APPLICATION_NAME_STRING     "Echo"
 #define APPLICATION_VERSION_STRING  "2.0.0"
 
 #define RETURN_SUCCESS        0
