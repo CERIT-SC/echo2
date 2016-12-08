@@ -1,0 +1,5 @@
+Echo status OK.
+
+Known problems
+--------------
+- several tests in TestSuite and TestSuite-Intensive don’t work. Files for those tests are missing
