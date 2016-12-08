@@ -52,6 +52,8 @@ class NeighbourFinderTests : public CppUnit::TestFixture {
     HashPtr hashTable;
     NeighbourFinder *finder;
     NeighbTablePtr neighbTable;
+    
+    string path; //path to TestSuite files
 public:
     NeighbourFinderTests();
     ~NeighbourFinderTests();

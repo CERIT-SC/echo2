@@ -39,7 +39,11 @@ class HashComputationTests : public CppUnit::TestFixture {
     HashComputation* computation;
     HashPtr hashTable1, hashTable3, hashTable4;
     vector<HashPtr> tables;
+    
+    string path; //path to TestSuite files
 public:
+    HashComputationTests();
+    
     void setUp();
     void tearDown();
     

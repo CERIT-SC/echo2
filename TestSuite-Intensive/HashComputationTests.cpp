@@ -10,10 +10,18 @@
 
 CPPUNIT_TEST_SUITE_REGISTRATION(HashComputationTests);
 
+HashComputationTests::HashComputationTests() {
+    //create path to testing files
+    path = __FILE__;
+    size_t end = path.find_last_of("/") + 1;
+    path = path.substr(0, end);
+    path += "TestSuiteFiles/";
+}
+
 void HashComputationTests::setUp() {
     loader = new SequenceFileLoader;
     seqArray.clear();
-    loader->load("TestSuiteFiles/normal.txt", seqArray);
+    loader->load(path + "input.txt", seqArray);
     
     access = new RandomisedAccess(seqArray);
     

@@ -11,6 +11,12 @@
 CPPUNIT_TEST_SUITE_REGISTRATION(NeighbourFinderTests);
 
 NeighbourFinderTests::NeighbourFinderTests() {
+    //create path to testing files
+    path = __FILE__;
+    size_t end = path.find_last_of("/") + 1;
+    path = path.substr(0, end);
+    path += "TestSuiteFiles/";
+    
     //error computation test
     sequences.push_back(Sequence(
             "GGTACTTTTATTTTCGGAGCTGTGGGCAACATTCAAATACTAAGCGAAGCTCCGGCATGAAGTGCTGGG"));
@@ -22,7 +28,7 @@ NeighbourFinderTests::NeighbourFinderTests() {
     
     //NeighbourFinder tests
     loader = new SequenceFileLoader;
-    loader->load("TestSuiteFiles/normal.txt", sequenceArray);
+    loader->load(path + "input.txt", sequenceArray);
     access2 = new RandomisedAccess(sequenceArray, false);
     hashComp = new HashComputation(*access2, 100, 15);
     hashTable = HashPtr(new HashKmerOccTable_Impl<KmerOcc_UnsChar>);
