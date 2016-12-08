@@ -29,8 +29,11 @@ class SequenceFileLoaderTests : public CppUnit::TestFixture {
     vector<Sequence> seqArray;
     SequenceFileLoader loader;
     typedef vector<Sequence>::size_type SIZE;
+    string path;
     
 public:
+    SequenceFileLoaderTests();
+    
     void setUp();
     void tearDown();
     
