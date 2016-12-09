@@ -2,7 +2,7 @@
 
 cd Echo
 
-g++ -std=c++11 -pthread -O3 -m64 *.h *.cpp 2> /dev/null
+g++ -std=c++11 -pthread -O3 -m64 *.h *.cpp
 
 rm *.gch
 
