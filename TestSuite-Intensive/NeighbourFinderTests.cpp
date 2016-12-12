@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "NeighbourFinderTests.h"
+#include "NeighbourFinderTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(NeighbourFinderTests);
 

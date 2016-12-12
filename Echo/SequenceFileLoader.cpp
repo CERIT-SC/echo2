@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "SequenceFileLoader.h"
+#include "SequenceFileLoader.hpp"
 
 SequenceFileLoader::SequenceFileLoader() {}
 

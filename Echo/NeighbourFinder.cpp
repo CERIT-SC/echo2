@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "NeighbourFinder.h"
+#include "NeighbourFinder.hpp"
 
 NeighbourFinder::NeighbourFinder(const ConstHashPtr hash, const RandomisedAccess& access,
                                  unsigned minOverlap, float errTolerance)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "Poisson.h"
+#include "Poisson.hpp"
 
 
 //void poissonTotalVar(vector<double> histogram, unsigned& estMean, double& estTotalVar) {

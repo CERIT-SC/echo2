@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "Options.h"
+#include "Options.hpp"
 
 #define VALUE argv[i+1]
 #define HELP_SPACE 26

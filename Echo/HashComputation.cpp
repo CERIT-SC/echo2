@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "HashComputation.h"
+#include "HashComputation.hpp"
 
 void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
     assert(numberOfThreads > 0);

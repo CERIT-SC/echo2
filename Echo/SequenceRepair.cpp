@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "SequenceRepair.h"
+#include "SequenceRepair.hpp"
 
 SequenceRepair::SequenceRepair(const RandomisedAccess& access,
                                const ConstNeighbTablePtr neighbTable,

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "Tools.h"
+#include "Tools.hpp"
 
 //N44MATRIX
 N44Matrix::N44Matrix(unsigned length) {

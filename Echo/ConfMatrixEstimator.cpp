@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "ConfMatrixEstimator.h"
+#include "ConfMatrixEstimator.hpp"
 
 ConfMatrixEstimator::ConfMatrixEstimator(const RandomisedAccess& access,
                     const ConstNeighbTablePtr neighbTable,
