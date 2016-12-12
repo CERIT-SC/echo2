@@ -1,5 +1,5 @@
 //
-//  ConfMatrixEstimator.h
+//  ConfMatrixEstimator.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 19/2/14.
@@ -16,11 +16,11 @@
 #include <limits>
 #include <thread>
 
-#include "RandomisedAccess.h"
-#include "NeighbourTable.h"
-#include "Tools.h"
-#include "Mutex.h"
-#include "debug.h"
+#include "RandomisedAccess.hpp"
+#include "NeighbourTable.hpp"
+#include "Tools.hpp"
+#include "Mutex.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "FastqSave.h"
+#include "FastqSave.hpp"
 
 void FastqSave::open(string fileName) {
     this->fileName = fileName;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "RandomisedAccess.h"
+#include "RandomisedAccess.hpp"
 
 RandomisedAccess::RandomisedAccess(const vector<Sequence>& sequences,
                                    bool randomise) : sequences(sequences) {

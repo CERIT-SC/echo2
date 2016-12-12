@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "DynamicArrayTests.h"
+#include "DynamicArrayTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(DynamicArrayTests);
 

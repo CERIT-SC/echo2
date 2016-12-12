@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/Options.h"
+#include "../Echo/Options.hpp"
 
 class OptionsTest : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(OptionsTest);

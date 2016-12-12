@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "HistogramComputationTests.h"
+#include "HistogramComputationTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(HistCompTests);
 

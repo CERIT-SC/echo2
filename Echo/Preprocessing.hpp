@@ -13,10 +13,10 @@
 #include <vector>
 #include <sstream>
 
-#include "MessageLogger.h"
-#include "Sequence.h"
-#include "RandomisedAccess.h"
-#include "SequenceFileLoader.h"
+#include "MessageLogger.hpp"
+#include "Sequence.hpp"
+#include "RandomisedAccess.hpp"
+#include "SequenceFileLoader.hpp"
 using namespace std;
 
 typedef shared_ptr<RandomisedAccess> RandAccessPtr;

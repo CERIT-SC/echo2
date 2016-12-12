@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "HistogramComputation.h"
+#include "HistogramComputation.hpp"
 
 
 vector<unsigned> HistogramComputation::compute(unsigned minOveralp, double maxErrTolerance, ULL sampleSize) {

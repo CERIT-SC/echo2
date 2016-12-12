@@ -14,8 +14,8 @@
 #include <random>
 #include <memory>
 
-#include "Sequence.h"
-#include "debug.h"
+#include "Sequence.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

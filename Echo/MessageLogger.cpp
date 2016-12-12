@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "MessageLogger.h"
+#include "MessageLogger.hpp"
 
 #define SWF setw(2) << setfill('0')
 

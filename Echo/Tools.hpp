@@ -1,5 +1,5 @@
 //
-//  Tools.h
+//  Tools.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 03/03/14.
@@ -13,11 +13,11 @@
 #include <tuple>
 #include <array>
 
-#include "Sequence.h"
-#include "RandomisedAccess.h"
-#include "NeighbourTable.h"
-#include "HashKmerOccTable.h"
-#include "debug.h"
+#include "Sequence.hpp"
+#include "RandomisedAccess.hpp"
+#include "NeighbourTable.hpp"
+#include "HashKmerOccTable.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

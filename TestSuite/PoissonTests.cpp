@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "PoissonTests.h"
+#include "PoissonTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(PoissonTests);
 

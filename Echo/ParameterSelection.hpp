@@ -15,14 +15,14 @@
 #include <cmath>
 #include <string>
 
-#include "MessageLogger.h"
-#include "HashKmerOccTable.h"
-#include "NeighbourOccurrence.h"
-#include "NeighbourFinder.h"
-#include "HistogramComputation.h"
-#include "ConfMatrixEstimator.h"
-#include "Poisson.h"
-#include "Params.h"
+#include "MessageLogger.hpp"
+#include "HashKmerOccTable.hpp"
+#include "NeighbourOccurrence.hpp"
+#include "NeighbourFinder.hpp"
+#include "HistogramComputation.hpp"
+#include "ConfMatrixEstimator.hpp"
+#include "Poisson.hpp"
+#include "Params.hpp"
 using namespace std;
 
 typedef vector<unsigned> Histogram;

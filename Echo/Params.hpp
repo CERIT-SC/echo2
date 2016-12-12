@@ -11,10 +11,10 @@
 
 #include <vector>
 #include <cmath>
-#include "Sequence.h"
-#include "Options.h"
-#include "Tools.h"
-#include "debug.h"
+#include "Sequence.hpp"
+#include "Options.hpp"
+#include "Tools.hpp"
+#include "debug.hpp"
 
 struct Params {
     unsigned kmerLength, maxSeqLength;

@@ -16,8 +16,8 @@
 #include <thread>
 #include <algorithm>
 
-#include "DynamicArray.h"
-#include "debug.h"
+#include "DynamicArray.hpp"
+#include "debug.hpp"
 using namespace std;
 
 

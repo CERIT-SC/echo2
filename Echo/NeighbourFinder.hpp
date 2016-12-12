@@ -1,5 +1,5 @@
 //
-//  NeighbourFinder.h
+//  NeighbourFinder.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 21/09/13.
@@ -17,12 +17,12 @@
 #include <vector>
 #include <atomic>
 
-#include "NeighbourTable.h"
-#include "HashKmerOccTable.h"
-#include "RandomisedAccess.h"
-#include "Mutex.h"
-#include "Tools.h"
-#include "debug.h"
+#include "NeighbourTable.hpp"
+#include "HashKmerOccTable.hpp"
+#include "RandomisedAccess.hpp"
+#include "Mutex.hpp"
+#include "Tools.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

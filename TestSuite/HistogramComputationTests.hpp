@@ -14,11 +14,11 @@ using namespace std;
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/HistogramComputation.h"
-#include "../Echo/RandomisedAccess.h"
-#include "../Echo/NeighbourTable.h"
-#include "../Echo/Sequence.h"
-#include "../Echo/NeighbourOccurrence.h"
+#include "../Echo/HistogramComputation.hpp"
+#include "../Echo/RandomisedAccess.hpp"
+#include "../Echo/NeighbourTable.hpp"
+#include "../Echo/Sequence.hpp"
+#include "../Echo/NeighbourOccurrence.hpp"
 
 
 class HistCompTests : public CppUnit::TestFixture {

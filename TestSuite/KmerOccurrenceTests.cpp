@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "KmerOccurrenceTests.h"
+#include "KmerOccurrenceTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(KmerOccurrenceTests);
 

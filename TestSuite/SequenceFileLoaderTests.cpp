@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "SequenceFileLoaderTests.h"
+#include "SequenceFileLoaderTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(SequenceFileLoaderTests);
 

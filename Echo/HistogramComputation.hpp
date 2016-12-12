@@ -1,5 +1,5 @@
 //
-//  HistogramComputation.h
+//  HistogramComputation.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 18/2/14.
@@ -15,9 +15,9 @@
 #include <set>
 #include <algorithm>
 
-#include "RandomisedAccess.h"
-#include "NeighbourTable.h"
-#include "Tools.h"
+#include "RandomisedAccess.hpp"
+#include "NeighbourTable.hpp"
+#include "Tools.hpp"
 using namespace std;
 
 class HistogramComputation {

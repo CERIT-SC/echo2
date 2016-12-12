@@ -1,5 +1,5 @@
 //
-//  NeighbourFinderTests.h
+//  NeighbourFinderTests.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 12/02/14.
@@ -19,14 +19,14 @@ using namespace std;
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/NeighbourTable.h"
-#include "../Echo/NeighbourFinder.h"
-#include "../Echo/RandomisedAccess.h"
-#include "../Echo/Sequence.h"
-#include "../Echo/SequenceFileLoader.h"
-#include "../Echo/HashComputation.h"
-#include "../Echo/HashKmerOccTable.h"
-#include "../Echo/NeighbourOccurrence.h"
+#include "../Echo/NeighbourTable.hpp"
+#include "../Echo/NeighbourFinder.hpp"
+#include "../Echo/RandomisedAccess.hpp"
+#include "../Echo/Sequence.hpp"
+#include "../Echo/SequenceFileLoader.hpp"
+#include "../Echo/HashComputation.hpp"
+#include "../Echo/HashKmerOccTable.hpp"
+#include "../Echo/NeighbourOccurrence.hpp"
 
 class NeighbourFinderTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(NeighbourFinderTests);

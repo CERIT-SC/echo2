@@ -38,7 +38,7 @@
 #include <memory>
 #include <stdexcept>
 
-#include "debug.h"
+#include "debug.hpp"
 using namespace std;
 
 //forward declarations

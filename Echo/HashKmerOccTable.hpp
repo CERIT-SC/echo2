@@ -19,9 +19,9 @@
 #include <thread>
 #include <algorithm>
 
-#include "KmerOccurrence.h"
-#include "DynamicArray.h"
-#include "debug.h"
+#include "KmerOccurrence.hpp"
+#include "DynamicArray.hpp"
+#include "debug.hpp"
 using namespace std;
 
 class HashKmerOccTable;

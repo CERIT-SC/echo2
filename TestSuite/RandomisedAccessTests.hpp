@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/RandomisedAccess.h"
+#include "../Echo/RandomisedAccess.hpp"
 
 #include <vector>
 using namespace std;

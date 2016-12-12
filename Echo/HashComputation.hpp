@@ -1,5 +1,5 @@
 //
-//  HashComputation.h
+//  HashComputation.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 15/09/13.
@@ -15,11 +15,11 @@
 #include <limits>
 #include <algorithm>
 
-#include "Sequence.h"
-#include "RandomisedAccess.h"
-#include "HashKmerOccTable.h"
-#include "Mutex.h"
-#include "debug.h"
+#include "Sequence.hpp"
+#include "RandomisedAccess.hpp"
+#include "HashKmerOccTable.hpp"
+#include "Mutex.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

@@ -13,7 +13,7 @@
 #include <fstream>
 #include <vector>
 #include <stdexcept>
-#include "debug.h"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

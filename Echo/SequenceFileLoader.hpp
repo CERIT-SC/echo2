@@ -16,8 +16,8 @@
 #include <limits>
 #include <stdexcept>
 
-#include "Sequence.h"
-#include "MessageLogger.h"
+#include "Sequence.hpp"
+#include "MessageLogger.hpp"
 
 /*
  Exceptions:

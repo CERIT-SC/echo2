@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "KmerOccurrence.h"
+#include "KmerOccurrence.hpp"
 
 //KmerOcc_UnsChar
 KmerOcc_UnsChar::KmerOcc_UnsChar(ULL seqId, unsigned pos) {

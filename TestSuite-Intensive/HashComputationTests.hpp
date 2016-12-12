@@ -17,10 +17,10 @@ using namespace std;
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/HashComputation.h"
-#include "../Echo/SequenceFileLoader.h"
-#include "../Echo/Sequence.h"
-#include "../Echo/RandomisedAccess.h"
+#include "../Echo/HashComputation.hpp"
+#include "../Echo/SequenceFileLoader.hpp"
+#include "../Echo/Sequence.hpp"
+#include "../Echo/RandomisedAccess.hpp"
 
 class HashComputationTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(HashComputationTests);

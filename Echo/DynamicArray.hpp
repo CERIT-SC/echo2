@@ -20,7 +20,7 @@
 #include <cstring>
 #include <algorithm>
 
-#include "debug.h"
+#include "debug.hpp"
 using namespace std;
 
 

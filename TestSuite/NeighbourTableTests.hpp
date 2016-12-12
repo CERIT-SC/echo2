@@ -1,5 +1,5 @@
 //
-//  NeighbourTableTests.h
+//  NeighbourTableTests.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 11/02/14.
@@ -13,8 +13,8 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/NeighbourTable.h"
-#include "../Echo/NeighbourOccurrence.h"
+#include "../Echo/NeighbourTable.hpp"
+#include "../Echo/NeighbourOccurrence.hpp"
 
 class NeighbourTableTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(NeighbourTableTests);

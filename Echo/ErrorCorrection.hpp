@@ -1,5 +1,5 @@
 //
-//  ErrorCorrection.h
+//  ErrorCorrection.hpp
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 14/09/13.
@@ -12,13 +12,13 @@
 #include <vector>
 #include <string>
 
-#include "MessageLogger.h"
-#include "NeighbourOccurrence.h"
-#include "NeighbourTable.h"
-#include "NeighbourFinder.h"
-#include "RandomisedAccess.h"
-#include "SequenceRepair.h"
-#include "Params.h"
+#include "MessageLogger.hpp"
+#include "NeighbourOccurrence.hpp"
+#include "NeighbourTable.hpp"
+#include "NeighbourFinder.hpp"
+#include "RandomisedAccess.hpp"
+#include "SequenceRepair.hpp"
+#include "Params.hpp"
 using namespace std;
 
 class ErrorCorrection {

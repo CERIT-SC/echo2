@@ -13,14 +13,14 @@
 #include <limits>
 #include <algorithm>
 
-#include "MessageLogger.h"
-#include "HashKmerOccTable.h"
-#include "RandomisedAccess.h"
-#include "KmerOccurrence.h"
-#include "HashComputation.h"
-#include "Params.h"
-#include "GlobalSettings.h"
-#include "debug.h"
+#include "MessageLogger.hpp"
+#include "HashKmerOccTable.hpp"
+#include "RandomisedAccess.hpp"
+#include "KmerOccurrence.hpp"
+#include "HashComputation.hpp"
+#include "Params.hpp"
+#include "GlobalSettings.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;

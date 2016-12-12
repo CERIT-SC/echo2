@@ -11,7 +11,7 @@
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
-#include "../Echo/Sequence.h"
+#include "../Echo/Sequence.hpp"
 
 
 #include <string>

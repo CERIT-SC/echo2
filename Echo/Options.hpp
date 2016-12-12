@@ -15,8 +15,8 @@
 #include <vector>
 #include <sstream>
 
-#include "MessageLogger.h"
-#include "GlobalSettings.h"
+#include "MessageLogger.hpp"
+#include "GlobalSettings.hpp"
 using namespace std;
 
 enum State {ST_OK, ST_INP_ERROR, ST_HELP, ST_VERSION };

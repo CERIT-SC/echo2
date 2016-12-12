@@ -16,9 +16,9 @@
 #include <array>
 #include <thread>
 
-#include "RandomisedAccess.h"
-#include "Tools.h"
-#include "debug.h"
+#include "RandomisedAccess.hpp"
+#include "Tools.hpp"
+#include "debug.hpp"
 using namespace std;
 
 typedef unsigned long long ULL;
