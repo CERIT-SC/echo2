@@ -2,9 +2,7 @@
 
 cd Echo
 
-g++ -std=c++11 -pthread -O3 -m64 *.hpp *.cpp
-
-rm *.gch
+g++ -std=c++11 -pthread -O3 -m64 *.cpp
 
 cd ..
 
