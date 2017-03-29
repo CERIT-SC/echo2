@@ -1,5 +1,5 @@
 
-# ECHO 2 Error Corrector
+# ECHO 2
 
 This tool finds and corrects sequencing errors in DNA data.
 DNA sequencers introduce errors in sequenced data. This tool
@@ -27,7 +27,7 @@ there will be rapid decrease of performance.
 In our performance tests, 2,5 GB fastq file was processed fastest
 using 16 cores and 14 GB file was processed fastest using 24 cores.
 
-## Compilation instructions
+## Compilation
 GCC 4.8.1 or newer is required. You can alternatively use different
 compiler that supports C++11 standard.
 
@@ -36,7 +36,7 @@ There are 2 ways to compile Echo:
   makefile in the future). The script will compile Echo and
   save it to `Build` folder.
 - Alternatively, you can do manual compilation – go to `Echo` folder
-  where the source files are. And run this command:
+  where the source files are. Run this command:
   `g++ -std=c++11 -pthread -O3 -m64 *.cpp -o Echo`
 
 The best runtime is achieved by compiling with O3 optimization.
@@ -45,14 +45,15 @@ The best runtime is achieved by compiling with O3 optimization.
 Program is being run through command line. You can get description
 of all options by running `./Echo --help`.
 
-Simplest way, how to run Echo is to provide file with sequences:
+Simplest way to run Echo is to provide file with sequences:
 
 ``` bash
 ./Echo file_to_be_corrected.fastq
 ```
 
-Recommended way is to specify not only the file, but also number of
-cores to use (option `-n` or `--ncpu`):
+Recommended way is to specify the file *and* number of cores to use
+(option `-n` or `--ncpu`). If you don't specify number of cores,
+program will use only one.
 
 ``` bash
 ./Echo -n 8 file.fastq
@@ -93,6 +94,7 @@ suffix `-corrected`. Which means that result from file
 
 Output is always saved as [FASTQ].
 
+### Log
 Program prints log information to standard output during processing.
 If you want to preserve the log, you can specify the log file using
 option `-l` or `--log`:
