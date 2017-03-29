@@ -12,7 +12,7 @@ This new implementation was published in:
 [orig echo]: https://www.ncbi.nlm.nih.gov/pubmed/21482625
 [new echo]: http://www.memics.cz/2015/download/memics15-proceedings.pdf#page=68
 
-#### System and hardware requirements
+## System and hardware requirements
 Echo is UNIX based application. It is build for parallel processing.
 So system with multiple cores is recommended. Let's take an example
 of a large data: File containing 300 million sequences of length 100
@@ -27,7 +27,7 @@ there will be rapid decrease of performance.
 In our performance tests, 2,5 GB fastq file was processed fastest
 using 16 cores and 14 GB file was processed fastest using 24 cores.
 
-#### Compilation instructions
+## Compilation instructions
 GCC 4.8.1 or newer is required. You can alternatively use different
 compiler that supports C++11 standard.
 
@@ -41,7 +41,7 @@ There are 2 ways to compile Echo:
 
 The best runtime is achieved by compiling with O3 optimization.
 
-#### How to use
+## How to use
 Program is being run through command line. You can get description
 of all options by running `./Echo --help`.
 
@@ -58,7 +58,7 @@ cores to use (option `-n` or `--ncpu`):
 ./Echo -n 8 file.fastq
 ```
 
-##### Input files
+### Input files
 Echo supports 2 input file formats. If the file has `.fastq` or `.fq`
 extension, it is interpreted as [FASTQ] file. If the file does have
 different extension or doesn't have one, it is interpreted as simple
@@ -73,7 +73,7 @@ will process all of them one by one:
 ./Echo -n 8 first_file.fastq second.txt third.fq
 ```
 
-##### Output files
+### Output files
 Output file name (where corrected result is stored) can be specified
 using `-o` or `--output` option. In case of multiple input files -
 output files will be assigned to input files in the same order as
@@ -101,7 +101,7 @@ option `-l` or `--log`:
 ./Echo -n 8 file.fq -l log.txt
 ```
 
-##### Hash table
+### Hash table
 Huge hash table is used during processing. It's size can be specified
 using option `--hash_size`. Size of hash table can greatly influence
 the performance and the memory requirements.
@@ -121,7 +121,7 @@ different hashes.
 ./Echo -n 8 file.fq --hash_size 25
 ```
 
-##### Other options
+### Other options
 Echo specifies other options. You can list them by running
 `./Echo --help`. You don't have to use them. Program will set
 them automatically.
@@ -131,22 +131,18 @@ Example of running the program:
 ./Echo sequences.fastq -o result.fastq -n 8 --hash_size 28 -l log.txt --kmer 20
 ```
 
-#### Author
+## Author
 This implementation was created by Miloš Šimek at
 [Masaryk University](https://www.muni.cz/en).  
 You can email me at <simek@ics.muni.cz>.
 
-#### Acknowledgments
+## Acknowledgments
 I would like to thank Aleš Křenek who made this project possible.
 
-#### Copyright
+## Copyright
 This project is licensed under Creative Commons 4.0 International
 license (CC BY 4.0). Summary of the license can be found
 [here][lshort], the license itself can be found [here][llong].
 
 [lshort]: https://creativecommons.org/licenses/by/4.0/
 [llong]:  https://creativecommons.org/licenses/by/4.0/legalcode
-
-
-
-<!--Odkaz na publikace?-->
