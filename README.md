@@ -2,7 +2,7 @@
 # ECHO 2
 
 This tool finds and corrects sequencing errors in DNA data.
-DNA sequencers introduce errors in sequenced data. This tool
+DNA sequencers introduce errors in sequences. This tool
 aims to reduce as many of them as possible.
 
 Echo 2 is reimplementation of [ECHO Error Corrector][orig echo].  
@@ -17,18 +17,19 @@ Echo is UNIX based application. It is build for parallel processing.
 So system with multiple cores is recommended. Let's take an example
 of a large data: File containing 300 million sequences of length 100
 (60 GB [fastq] file).
-Echo can utilize up to **24 cores** for our example. The file should
+Echo can utilize **up to 24 cores** for our example. The file should
 be processed within a day.
 
-Echo has large requirements for memory. Our example might take about **420 GB of RAM**. If you're system doesn't have enough memory and
-starts using swapping, Echo will continue processing the data *but*
-there will be rapid decrease of performance.
+Echo has large requirements for memory. Our example might take about
+**420 GB of RAM**. If you're system doesn't have enough memory and
+starts using swap, Echo will continue processing *but* there will be
+rapid decrease of performance.
 
-In our performance tests, 2,5 GB fastq file was processed fastest
-using 16 cores and 14 GB file was processed fastest using 24 cores.
+In our performance tests, best speed was achieved using 16 cores
+for 2,5 GB file and 24 cores for 14 GB file or larger.
 
 ## Compilation
-GCC 4.8.1 or newer is required. You can alternatively use different
+GCC 4.8.1 or newer is required. You can alternatively use a different
 compiler that supports C++11 standard.
 
 There are 2 ways to compile Echo:
@@ -36,13 +37,13 @@ There are 2 ways to compile Echo:
   makefile in the future). The script will compile Echo and
   save it to `Build` folder.
 - Alternatively, you can do manual compilation – go to `Echo` folder
-  where the source files are. Run this command:
+  where are the source files and run this command:
   `g++ -std=c++11 -pthread -O3 -m64 *.cpp -o Echo`
 
 The best runtime is achieved by compiling with O3 optimization.
 
 ## How to use
-Program is being run through command line. You can get description
+Echo is command line tool. You can get description
 of all options by running `./Echo --help`.
 
 Simplest way to run Echo is to provide file with sequences:
@@ -51,7 +52,7 @@ Simplest way to run Echo is to provide file with sequences:
 ./Echo file_to_be_corrected.fastq
 ```
 
-Recommended way is to specify the file *and* number of cores to use
+But the recommended way is to specify the file *and* number of cores to use
 (option `-n` or `--ncpu`). If you don't specify number of cores,
 program will use only one.
 
@@ -76,8 +77,8 @@ will process all of them one by one:
 
 ### Output files
 Output file name (where corrected result is stored) can be specified
-using `-o` or `--output` option. In case of multiple input files -
-output files will be assigned to input files in the same order as
+using `-o` or `--output` option. If you specify multiple input files,
+then output files will be assigned to input files in the same order as
 specified on command line:
 
 ``` bash
@@ -87,7 +88,7 @@ specified on command line:
 In the example above, result from `file1` will be saved to `output1` and result from `file2` will be saved to `output2`. Result for `file3`
 will be saved to `file3-corrected` (as described below).
 
-Names for output files doesn't have to be specified. In this case
+Name for output file doesn't have to be specified. In this case
 Echo will save the result to a file with the same name, but adds
 suffix `-corrected`. Which means that result from file
 `sequences.fastq` will be saved to `sequences.fastq-corrected`.
@@ -112,11 +113,11 @@ If you don't specify the size of the hash table, program will determine
 appropriate size of its own. It is recommended to leave it that way.
 Making hash table larger (than what would program decide) wouldn't
 necessarily improve performance. There are cases where performance
-can even degrade. Making hash table smaller can be useful if you want
-to save memory but it will cause longer runtime.
+can even degrade. Making hash table smaller can be useful, if you want
+to save memory, but it will cause longer runtime.
 
 Hash table size can range from *20* to *32*. Value specifies
-size exponent. Size 20 means, that the hash can discern 2^20
+size exponent. Size 20 means, that the hash table can discern 2^20
 different hashes.
 
 ``` bash
@@ -128,7 +129,7 @@ Echo specifies other options. You can list them by running
 `./Echo --help`. You don't have to use them. Program will set
 them automatically.
 
-Example of running the program:
+Example of running the program using multiple options:
 ``` bash
 ./Echo sequences.fastq -o result.fastq -n 8 --hash_size 28 -l log.txt --kmer 20
 ```
