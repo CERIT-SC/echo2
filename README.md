@@ -1,9 +1,11 @@
 
 # ECHO 2
+Echo 2 is a tool for searching and correcting errors that has been introduced
+to DNA during sequencing.
 
-This tool finds and corrects sequencing errors in DNA data.
-DNA sequencers introduce errors in sequences. This tool
-aims to reduce as many of them as possible.
+Echo is using the fact, that genome is usually sequenced multiple times.
+Program looks for sequences, that belong to each other. The errors are being
+corrected by comparing these sequences while using statistical algorithms.
 
 Echo 2 is reimplementation of [ECHO Error Corrector][orig echo].  
 This new implementation was published in:
@@ -85,7 +87,8 @@ specified on command line:
 ./Echo file1 file2 file3 -o output1 -o output2
 ```
 
-In the example above, result from `file1` will be saved to `output1` and result from `file2` will be saved to `output2`. Result for `file3`
+In the example above, result from `file1` will be saved to `output1` and
+result from `file2` will be saved to `output2`. Result for `file3`
 will be saved to `file3-corrected` (as described below).
 
 Name for output file doesn't have to be specified. In this case
@@ -135,7 +138,7 @@ Example of running the program using multiple options:
 ```
 
 ## Author
-This implementation was created by Miloš Šimek at
+This implementation was created by **Miloš Šimek** at
 [Masaryk University](https://www.muni.cz/en).  
 You can email me at <simek@ics.muni.cz>.
 
