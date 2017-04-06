@@ -1,13 +1,8 @@
 
 # ECHO 2
-Echo 2 is a tool for searching and correcting errors that has been introduced
-to DNA during sequencing.
+Echo 2 is a tool for searching and correcting sequencing errors.
 
-Echo is using the fact, that genome is usually sequenced multiple times.
-Program looks for sequences, that belong to each other. The errors are being
-corrected by comparing these sequences while using statistical algorithms.
-
-Echo 2 is reimplementation of [ECHO Error Corrector][orig echo].  
+Echo 2 is reimplementation of [ECHO short-read error corrector][orig echo].  
 This new implementation was published in:
 [ECHO NGS Error Correction Reimplemented][new echo].
 
@@ -35,6 +30,7 @@ GCC 4.8.1 or newer is required. You can alternatively use a different
 compiler that supports C++11 standard.
 
 There are 2 ways to compile Echo:
+
 - You can simply run `compile.sh` script (this will be replaced by
   makefile in the future). The script will compile Echo and
   save it to `Build` folder.
@@ -112,12 +108,10 @@ Huge hash table is used during processing. It's size can be specified
 using option `--hash_size`. This size can greatly influence performance and
 memory requirements.
 
-If you don't specify the size of the hash table, program will determine
-appropriate size of its own. It is recommended to leave it that way.
-Making hash table larger, than what would program decide, wouldn't
-necessarily improve performance. There are cases where performance
-can even degrade. Making hash table smaller can be useful if you want
-to save memory, but it will cause longer runtime.
+If the size of the hash table is not specified, appropriate size will be
+determined automatically (recommended). Larger table, than estimated,
+wouldn't necessarily improve performance and can even degrade it.
+Smaller hash table can be useful to save memory. But this will increase runtime.
 
 Hash table size can range from *20* to *32*. Value specifies
 size exponent. Size 20 means, that the hash table can discern 2^20
