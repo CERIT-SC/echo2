@@ -4,7 +4,7 @@ Thumbs.db
 .Trashes
 
 # Project files #
-Build
+Build/
 xcuserdata/
 
 # Compilation #
@@ -16,4 +16,6 @@ xcuserdata/
 *.gch
 *.pch
 
+# Compiled programs #
 a.out
+echo2
