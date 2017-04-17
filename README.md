@@ -25,29 +25,38 @@ rapid decrease of performance.
 In our performance tests, the best speed was achieved using 16 cores
 for 2.5 GB file size, and 24 cores for 14 GB or larger.
 
-## Compilation
+## Compilation and installation
 GCC 4.8.1 or newer is required. You can alternatively use a different
 compiler that supports C++11 standard.
 
-There are 2 ways to compile Echo:
+**Installing Echo**:
 
-- You can simply run the `compile.sh` script (this will be replaced by
-  makefile in the future). The script will compile Echo and
-  save it to the `Build` folder.
-- Alternatively, you can do manual compilation – go to `Echo` folder
-  where the source files are located, and run this command:
-  `g++ -std=c++11 -pthread -O3 -m64 *.cpp -o Echo`
+1. On a command line, `cd` to the repository.
+2. Run `make` to compile the program.
+3. Run `make install` to install Echo to standard path (`/usr/local/bin`).
+   You may need admin privileges for this step. In that case run
+   `sudo make install` and enter admin password.
+4. After step 3, Echo should be available using command `echo2`. You can
+   test this by running `echo2 --version`. Examples in section "*How to use*"
+   expect, that Echo has been installed using these steps.
 
-The best runtime is achieved by compiling with O3 optimization.
+Instead of step 3, you can alternatively run `make here` to move the program
+to the main repository folder.
+
+**Uninstalling Echo**:
+
+- `make clean` will remove executable in repository
+- `make uninstall` will uninstall the program from standard path. This may
+  also need admin privileges. If so, run `sudo make uninstall`.
 
 ## How to use
 Echo is a command line tool. You can get the description
-of all options by running `./Echo --help`.
+of all options by running `echo2 --help`.
 
 The simplest way to run Echo is to provide the file with sequences:
 
 ``` bash
-./Echo file_to_be_corrected.fastq
+echo2 file_to_be_corrected.fastq
 ```
 
 But the recommended way is to specify the file *and* number of cores to use
@@ -55,7 +64,7 @@ But the recommended way is to specify the file *and* number of cores to use
 program will use only one.
 
 ``` bash
-./Echo -n 8 file.fastq
+echo2 -n 8 file.fastq
 ```
 
 ### Input files
@@ -70,7 +79,7 @@ You can specify more than one input file. In this case, the application
 will process all of them one by one:
 
 ``` bash
-./Echo -n 8 first_file.fastq second.txt third.fq
+echo2 -n 8 first_file.fastq second.txt third.fq
 ```
 
 ### Output files
@@ -80,7 +89,7 @@ then the output files will be assigned to input files in the same order as
 specified on the command line:
 
 ``` bash
-./Echo file1 file2 file3 -o output1 -o output2
+echo2 file1 file2 file3 -o output1 -o output2
 ```
 
 In the example above, the result from `file1` will be saved to `output1`, and
@@ -100,7 +109,7 @@ If you want to preserve the log, you can specify the log file using
 option `-l` or `--log`:
 
 ``` bash
-./Echo -n 8 file.fq -l log.txt
+echo2 -n 8 file.fq -l log.txt
 ```
 
 ### Hash table
@@ -119,16 +128,16 @@ size exponent. Size 20 means, that the hash table can discern 2^20
 different hashes.
 
 ``` bash
-./Echo -n 8 file.fq --hash_size 25
+echo2 -n 8 file.fq --hash_size 25
 ```
 
 ### Other options
-Echo specifies other options. You can list them by running `./Echo --help`.
+Echo specifies other options. You can list them by running `echo2 --help`.
 You do not have to use them. The program will set them automatically.
 
 Example of running a program using multiple options:
 ``` bash
-./Echo sequences.fastq -o result.fastq -n 8 --hash_size 28 -l log.txt --kmer 20
+echo2 sequences.fastq -o result.fastq -n 8 --hash_size 28 -l log.txt --kmer 20
 ```
 
 ## Author
