@@ -6,7 +6,7 @@ all:
 clean:
 	$(MAKE) -C Echo clean
 	-rm echo2
-	@echo Directory is clean
+	@echo "Directory is clean"
 
 install:
 	$(MAKE) -C Echo install
