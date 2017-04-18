@@ -3,6 +3,9 @@
 all:
 	$(MAKE) -C Echo all
 
+configure:
+	$(MAKE) -C Echo configure
+
 clean:
 	$(MAKE) -C Echo clean
 	-rm echo2

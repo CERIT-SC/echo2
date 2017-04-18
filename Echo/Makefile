@@ -1,11 +1,15 @@
-CXXFLAGS = -std=c++11 -pthread -O3 -m64
+CXXFLAGS = -std=c++11 -O3 -m64
+OBJ := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
-.PHONY: all clean install uninstall
 
 all: echo2
 
+configure:
+	$(CXX) $(CXXFLAGS) -M *.cpp > Makefile-dependencies
+-include Makefile-dependencies
+
 clean:
-	-rm echo2
+	-rm *.o echo2 Makefile-dependencies
 
 install:
 	mv echo2 /usr/local/bin/echo2
@@ -15,6 +19,11 @@ uninstall:
 	rm /usr/local/bin/echo2
 	@echo "Echo successfully uninstalled"
 
-echo2: *.cpp
+.PHONY: all configure clean install uninstall
+
+
+
+
+echo2: $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $?
 	@echo "Echo has been successfully compiled"
