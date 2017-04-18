@@ -32,11 +32,12 @@ compiler that supports C++11 standard.
 **Installing Echo**:
 
 1. On a command line, `cd` to the repository.
-2. Run `make` to compile the program.
-3. Run `make install` to install Echo to standard path (`/usr/local/bin`).
+2. Run `make configure` to configure the project.
+3. Run `make` to compile the program.
+4. Run `make install` to install Echo to standard path (`/usr/local/bin`).
    You may need admin privileges for this step. In that case run
    `sudo make install` and enter admin password.
-4. After step 3, Echo should be available using command `echo2`. You can
+5. After step 3, Echo should be available using command `echo2`. You can
    test this by running `echo2 --version`. Examples in section "*How to use*"
    expect, that Echo has been installed using these steps.
 
@@ -45,7 +46,7 @@ to the main repository folder.
 
 **Uninstalling Echo**:
 
-- `make clean` will remove executable in repository
+- `make clean` will clean the repository
 - `make uninstall` will uninstall the program from standard path. This may
   also need admin privileges. If so, run `sudo make uninstall`.
 
