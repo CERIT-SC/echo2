@@ -1,4 +1,4 @@
-CXXFLAGS = -std=c++11 -O3 -m64
+CXXFLAGS = -std=c++11 -pthread -O3 -m64
 OBJ := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 
