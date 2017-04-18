@@ -1,4 +1,4 @@
-.PHONY: all clean install uninstall
+.PHONY: all configure clean install uninstall here
 
 all:
 	$(MAKE) -C Echo all
