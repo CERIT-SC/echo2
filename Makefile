@@ -8,7 +8,7 @@ depend:
 
 clean:
 	$(MAKE) -C Echo clean
-	-rm echo2
+	rm -f echo2
 	@echo "Directory is clean"
 
 install:

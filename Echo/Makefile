@@ -9,7 +9,7 @@ depend:
 -include Makefile-dependencies
 
 clean:
-	-rm *.o echo2
+	rm -f *.o echo2
 
 install:
 	mv echo2 /usr/local/bin/echo2
