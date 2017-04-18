@@ -6,6 +6,7 @@ Thumbs.db
 # Project files #
 Build/
 xcuserdata/
+Makefile-dependencies
 
 # Compilation #
 *.slo
