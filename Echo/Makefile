@@ -4,12 +4,12 @@ OBJ := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 all: echo2
 
-configure:
+depend:
 	$(CXX) $(CXXFLAGS) -M *.cpp > Makefile-dependencies
 -include Makefile-dependencies
 
 clean:
-	-rm *.o echo2 Makefile-dependencies
+	-rm *.o echo2
 
 install:
 	mv echo2 /usr/local/bin/echo2

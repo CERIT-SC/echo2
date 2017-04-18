@@ -32,7 +32,7 @@ compiler that supports C++11 standard.
 **Installing Echo**:
 
 1. On a command line, `cd` to the repository.
-2. Run `make configure` to configure the project.
+2. Run `make depend` to configure the project.
 3. Run `make` to compile the program.
 4. Run `make install` to install Echo to standard path (`/usr/local/bin`).
    You may need admin privileges for this step. In that case run

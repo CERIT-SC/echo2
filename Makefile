@@ -3,8 +3,8 @@
 all:
 	$(MAKE) -C Echo all
 
-configure:
-	$(MAKE) -C Echo configure
+depend:
+	$(MAKE) -C Echo depend
 
 clean:
 	$(MAKE) -C Echo clean
