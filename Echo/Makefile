@@ -15,13 +15,13 @@ clean:
 
 .PHONY: install
 install:
-	mkdir -p $(PREFIX)/bin
-	cp echo2 $(PREFIX)/bin/echo2
-	@echo "Echo has been successfully installed (copied to $(PREFIX)/bin/)"
+	mkdir -p $(prefix)/bin
+	cp echo2 $(prefix)/bin/echo2
+	@echo "Echo has been successfully installed (copied to $(prefix)/bin/)"
 
 .PHONY: uninstall
 uninstall:
-	rm $(PREFIX)/bin/echo2
+	rm $(prefix)/bin/echo2
 	@echo "Echo successfully uninstalled"
 
 

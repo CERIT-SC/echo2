@@ -40,7 +40,7 @@ compiler that supports C++11 standard.
     - You can alternatively run `make here` to copy the program to the main
       repository folder.
     - You can choose where to install the application by providing variable
-      `PREFIX`. I.e. `make install PREFIX=/usr` will install Echo in `/usr/bin`
+      `prefix`. I.e. `make install prefix=/usr` will install Echo in `/usr/bin`
       folder.
 5. After `make install`, Echo should be available using command `echo2`. You can
    test this by running `echo2 --version`.
@@ -50,8 +50,8 @@ compiler that supports C++11 standard.
 - `make clean` will clean the repository
 - `make uninstall` will uninstall the program from standard path. This may
   also need admin privileges. If so, run `sudo make uninstall`.
-    - If you specified `PREFIX` during installation, you have to specify it
-      here to. I.e. `make uninstall PREFIX=/usr` will uninstall Echo from
+    - If you specified `prefix` during installation, you have to specify it
+      here to. I.e. `make uninstall prefix=/usr` will uninstall Echo from
       `/usr/bin` folder.
 
 ## How to use

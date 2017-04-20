@@ -1,4 +1,4 @@
-export PREFIX ?= /usr/local
+export prefix ?= /usr/local
 
 
 .PHONY: all
