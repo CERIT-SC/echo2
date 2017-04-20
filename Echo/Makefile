@@ -1,4 +1,5 @@
 CXXFLAGS = -std=c++11 -pthread -O3 -m64
+LDFLAGS += -pthread
 OBJ := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 .PHONY: all
