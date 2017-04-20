@@ -37,11 +37,11 @@ compiler that supports C++11 standard.
 4. Run `make install` to install Echo to standard path (`/usr/local/bin`).
    You may need admin privileges for this step. In that case, run
    `sudo make install` and enter admin password.
-     - You can alternatively run `make here` to copy the program to the main
-       repository folder.
-     - You can choose where to install the application by providing variable
-       `PREFIX`. I.e. `make install PREFIX=/usr` will install Echo in `/usr/bin`
-       folder.
+    - You can alternatively run `make here` to copy the program to the main
+      repository folder.
+    - You can choose where to install the application by providing variable
+      `PREFIX`. I.e. `make install PREFIX=/usr` will install Echo in `/usr/bin`
+      folder.
 5. After `make install`, Echo should be available using command `echo2`. You can
    test this by running `echo2 --version`.
 
