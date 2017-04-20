@@ -1,5 +1,7 @@
 .PHONY: all configure clean install uninstall here
 
+export PREFIX ?= /usr/local
+
 all:
 	$(MAKE) -C Echo all
 
@@ -18,4 +20,4 @@ uninstall:
 	$(MAKE) -C Echo uninstall
 
 here:
-	mv Echo/echo2 echo2
+	cp Echo/echo2 echo2
