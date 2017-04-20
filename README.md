@@ -50,6 +50,9 @@ compiler that supports C++11 standard.
 - `make clean` will clean the repository
 - `make uninstall` will uninstall the program from standard path. This may
   also need admin privileges. If so, run `sudo make uninstall`.
+    - If you specified `PREFIX` during installation, you have to specify it
+      here to. I.e. `make uninstall PREFIX=/usr` will uninstall Echo from
+      `/usr/bin` folder.
 
 ## How to use
 Echo is a command line tool. You can get the description
