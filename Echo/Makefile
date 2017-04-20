@@ -26,5 +26,5 @@ uninstall:
 
 
 echo2: $(OBJ)
-	$(CXX) $(LDFLAGS) -o $@ $(OBJ)
+	$(CXX) $(LDFLAGS) -o $@ $^
 	@echo "Echo has been successfully compiled"
