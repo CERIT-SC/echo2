@@ -141,6 +141,7 @@ unsigned processFiles(Options& options, MessageLogger& logger) {
         
         RandomisedAccess& seqRandAccess = *randAccessPtr;
         Params params = setParams(options, seqArray);
+        logger.log("K-mer length: " + to_string(params.kmerLength));
         
         //hashing
         Hashing hashing(logger, seqRandAccess, params);
