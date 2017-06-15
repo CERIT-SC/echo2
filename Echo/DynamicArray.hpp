@@ -49,7 +49,7 @@ public:
     ArrType* end();
     
 private:
-    void realocate(unsigned newCapacity);
+    void reallocate(unsigned newCapacity);
 };
 
 
@@ -68,7 +68,7 @@ DynamicArray<ArrType>::DynamicArray(unsigned capacity) {
     array = nullptr;
     _size = capacity = 0;
     
-    realocate(capacity);
+    reallocate(capacity);
 }
 
 template <class ArrType>
@@ -110,10 +110,10 @@ template <class ArrType>
 void DynamicArray<ArrType>::push_back(const ArrType& element) {
     if (_size == numeric_limits<unsigned>::max()) throw length_error("DynamicArray: max length exceeded.");
     
-    if (!array) realocate(1);
+    if (!array) reallocate(1);
     if (_size == capacity) {
-        if (capacity <= numeric_limits<unsigned>::max()/2) realocate(capacity*2);
-        else realocate(numeric_limits<unsigned>::max());
+        if (capacity <= numeric_limits<unsigned>::max()/2) reallocate(capacity*2);
+        else reallocate(numeric_limits<unsigned>::max());
     }
     
     array[_size] = element;
@@ -128,7 +128,7 @@ unsigned DynamicArray<ArrType>::size() const {
 
 template <class ArrType>
 void DynamicArray<ArrType>::reserve(unsigned newCapacity) {
-    realocate(newCapacity);
+    reallocate(newCapacity);
 }
 
 template <class ArrType>
@@ -140,7 +140,7 @@ void DynamicArray<ArrType>::resize(unsigned size) {
 
 template <class ArrType>
 void DynamicArray<ArrType>::shrink_to_fit() {
-    if(capacity > _size) realocate(_size);
+    if(capacity > _size) reallocate(_size);
 }
 
 template <class ArrType>
@@ -155,7 +155,7 @@ ArrType* DynamicArray<ArrType>::end() {
 
 //private
 template <class ArrType>
-void DynamicArray<ArrType>::realocate(unsigned newCapacity) {
+void DynamicArray<ArrType>::reallocate(unsigned newCapacity) {
     if (newCapacity < _size) return;
     if (capacity == newCapacity) return;
     
