@@ -39,6 +39,13 @@ public:
     HashPtr operator()(unsigned numberOfThreads) {
         logger.log("Hashing phase (2/4)");
         
+        //1) run the computation to find out how much space needs to be allocated
+        
+        //2) allocate table exactly
+        
+        //3) run computation again and save results to table
+        
+        
         //create hash table
         HashPtr hash = chooseTableVersion(seqRandAcc.size());
         ULL hashTableSize = getHashSize();
