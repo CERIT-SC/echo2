@@ -10,6 +10,9 @@
 		E91A121317DDFCA100B1F66F /* RandomisedAccess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91A121117DDFCA100B1F66F /* RandomisedAccess.cpp */; };
 		E91A122017DE3C6300B1F66F /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91A121E17DE3C6300B1F66F /* Options.cpp */; };
 		E91A122317DE59AE00B1F66F /* MessageLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91A122117DE59AE00B1F66F /* MessageLogger.cpp */; };
+		E91B3F981FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91B3F961FA9FE6400DDB3CA /* AllocComputation.cpp */; };
+		E91B3F991FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91B3F961FA9FE6400DDB3CA /* AllocComputation.cpp */; };
+		E91B3F9A1FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91B3F961FA9FE6400DDB3CA /* AllocComputation.cpp */; };
 		E91D0AB81847D2C8003E030C /* SequenceFileLoaderTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E91D0AB61847D2C8003E030C /* SequenceFileLoaderTests.cpp */; };
 		E940C8EB18AD482000DB38D6 /* HashComputationTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E940C8E618AD482000DB38D6 /* HashComputationTests.cpp */; };
 		E940C8EC18AD482000DB38D6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E940C8E818AD482000DB38D6 /* main.cpp */; };
@@ -106,6 +109,8 @@
 		E91A121F17DE3C6300B1F66F /* Options.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Options.hpp; sourceTree = "<group>"; };
 		E91A122117DE59AE00B1F66F /* MessageLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageLogger.cpp; sourceTree = "<group>"; };
 		E91A122217DE59AE00B1F66F /* MessageLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MessageLogger.hpp; sourceTree = "<group>"; };
+		E91B3F961FA9FE6400DDB3CA /* AllocComputation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AllocComputation.cpp; sourceTree = "<group>"; };
+		E91B3F971FA9FE6400DDB3CA /* AllocComputation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AllocComputation.hpp; sourceTree = "<group>"; };
 		E91D0AB61847D2C8003E030C /* SequenceFileLoaderTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SequenceFileLoaderTests.cpp; sourceTree = "<group>"; };
 		E91D0AB71847D2C8003E030C /* SequenceFileLoaderTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SequenceFileLoaderTests.hpp; sourceTree = "<group>"; };
 		E92CE09E17E5A03000093A2D /* Params.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Params.hpp; sourceTree = "<group>"; };
@@ -333,6 +338,8 @@
 				E99B8C4E17E4A0DA003A5D60 /* KmerOccurrence.hpp */,
 				E99B8C4D17E4A0DA003A5D60 /* KmerOccurrence.cpp */,
 				E99B8C5117E4A29B003A5D60 /* HashKmerOccTable.hpp */,
+				E91B3F971FA9FE6400DDB3CA /* AllocComputation.hpp */,
+				E91B3F961FA9FE6400DDB3CA /* AllocComputation.cpp */,
 				E9A2AAAF17E62686005875B7 /* HashComputation.hpp */,
 				E9A2AAAE17E62686005875B7 /* HashComputation.cpp */,
 			);
@@ -502,6 +509,7 @@
 				E9C7ACCE18B53B2C00482A8E /* ConfMatrixEstimator.cpp in Sources */,
 				E940C8EF18AD484F00DB38D6 /* RandomisedAccess.cpp in Sources */,
 				E9CFEC1F18B36CFE008F60C7 /* HistogramComputation.cpp in Sources */,
+				E91B3F9A1FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */,
 				E9C7ACD318B546F400482A8E /* HistogramComputationTests.cpp in Sources */,
 				E940C8F118AD485600DB38D6 /* SequenceFileLoader.cpp in Sources */,
 			);
@@ -514,6 +522,7 @@
 				E9C3031317DCE21100E67695 /* main.cpp in Sources */,
 				E94359FD196308B4009E07C8 /* Poisson.cpp in Sources */,
 				E9C3032117DCF0C300E67695 /* Sequence.cpp in Sources */,
+				E91B3F981FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */,
 				E91A121317DDFCA100B1F66F /* RandomisedAccess.cpp in Sources */,
 				E91A122017DE3C6300B1F66F /* Options.cpp in Sources */,
 				E9CCE15A18E1C5A80094D597 /* FastqSave.cpp in Sources */,
@@ -541,6 +550,7 @@
 				E91D0AB81847D2C8003E030C /* SequenceFileLoaderTests.cpp in Sources */,
 				E9D845B718CCEF3E0058D167 /* ToolsTests.cpp in Sources */,
 				E9B90B841842D17700A80974 /* RandomisedAccessTests.cpp in Sources */,
+				E91B3F991FA9FE6400DDB3CA /* AllocComputation.cpp in Sources */,
 				E9E7938C18AA2FAC00E86090 /* NeighbourTableTests.cpp in Sources */,
 				E97192DF184A30E600F46801 /* DynamicArrayTests.cpp in Sources */,
 				E978C801184CA5F4009A6523 /* KmerOccurrenceTests.cpp in Sources */,
