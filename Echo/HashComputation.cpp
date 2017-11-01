@@ -25,7 +25,8 @@ void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
     ULL sectSize = seqRandAcc.size()/numberOfThreads;
     
     for (auto it = threads.begin(); it != threads.end(); it++) {
-        *it = thread(&HashComputation::computeHashesForSection, this, sectStart, sectStart+sectSize);
+        *it = thread(&HashComputation::computeHashesForSection, this,
+                     sectStart, sectStart+sectSize);
         sectStart += sectSize;
     }
     
@@ -40,7 +41,8 @@ void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
 
 void HashComputation::computeHashesForSection(ULL startIndex, ULL endIndex) {
     //initialize arrays in thread only once (for speed)
-    shared_ptr<char> seqData = shared_ptr<char>(new char[maxSeqLen],[](char* p){ delete [] p; });
+    shared_ptr<char> seqData = shared_ptr<char>(new char[maxSeqLen],
+                                                [](char* p){ delete [] p; });
     vector<unsigned> added;
     added.reserve(maxSeqLen-kmerLen);
     
@@ -49,7 +51,9 @@ void HashComputation::computeHashesForSection(ULL startIndex, ULL endIndex) {
     }
 }
 
-void HashComputation::computeHashesForSeq(ULL seqIndex, char* seqDataArray, vector<unsigned>& added) {
+void HashComputation::computeHashesForSeq(ULL seqIndex,
+                                          char* seqDataArray,
+                                          vector<unsigned>& added) {
     Interpreter* seq = seqRandAcc[seqIndex];
     
     //get data for sequence
@@ -60,7 +64,8 @@ void HashComputation::computeHashesForSeq(ULL seqIndex, char* seqDataArray, vect
     
     unsigned hashVal;
     added.clear();
-    assert(added.capacity() > 0); //the array must stay allocated for speed purposes
+    assert(added.capacity() > 0); //the array must stay allocated for speed
+                                  //purposes
     bool isComputed = false;
     
     for (unsigned i=0; i <= length-kmerLen; i++) {
@@ -72,7 +77,8 @@ void HashComputation::computeHashesForSeq(ULL seqIndex, char* seqDataArray, vect
         if (find(added.begin(), added.end(), hashVal) == added.end()) {
             added.push_back(hashVal);
         } else {
-            //if hashes are equal, keep occurrences from beginning of the sequence
+            //if hashes are equal, keep occurrences from beginning of the
+            //sequence
             if (!seq->isCompl()) continue;
             else {  //or from end of the complement
                 mutexes[hashVal].lock();
@@ -91,7 +97,9 @@ void HashComputation::computeHashesForSeq(ULL seqIndex, char* seqDataArray, vect
     delete seq;
 }
 
-unsigned HashComputation::hash(const char *startPos, const char *endPos, bool& isComputed) {
+unsigned HashComputation::hash(const char *startPos,
+                               const char *endPos,
+                               bool& isComputed) {
     unsigned hash = 0;
     isComputed = false;
     

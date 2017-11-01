@@ -33,14 +33,19 @@ class HashComputation {
     unsigned hashIndBits;
     
 public:
-    HashComputation(RandomisedAccess& seqRandAcc, unsigned maxSeqLen, unsigned kmerLen)
-        : seqRandAcc(seqRandAcc), kmerLen(kmerLen), maxSeqLen(maxSeqLen) {}
+    HashComputation(RandomisedAccess& seqRandAcc,
+                    unsigned maxSeqLen,
+                    unsigned kmerLen) :
+        seqRandAcc(seqRandAcc), kmerLen(kmerLen), maxSeqLen(maxSeqLen) {}
     
     void operator()(HashPtr hashTable, unsigned numberOfThreads);
     
 private:
-    void computeHashesForSection(ULL startIndex, ULL endIndex); //computes for [start, end)
-    void computeHashesForSeq(ULL seqIndex, char* seqDataArray, vector<unsigned>& added);
+    //computes for [start, end)
+    void computeHashesForSection(ULL startIndex, ULL endIndex);
+    void computeHashesForSeq(ULL seqIndex,
+                             char* seqDataArray,
+                             vector<unsigned>& added);
     unsigned hash(const char * startPos, const char *endPos, bool& isComputed);
 };
 
