@@ -40,10 +40,16 @@ public:
         logger.log("Hashing phase (2/4)");
         
         //1) run the computation to find out how much space needs to be allocated
+        logger.log("Computing memory needs");
         
         //2) allocate table exactly
+        logger.log("Allocating memory");
         
         //3) run computation again and save results to table
+        logger.log("Computing hashes");
+        
+        
+        
         
         
         //create hash table
