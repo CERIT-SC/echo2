@@ -69,7 +69,7 @@ void HashComputation::computeHashesForSeq(ULL seqIndex,
     bool isComputed = false;
     
     for (unsigned i=0; i <= length-kmerLen; i++) {
-        hashVal = hash(seqDataArray+i, seqDataArray+i+kmerLen, isComputed);
+        hashVal = getHash(seqDataArray+i, seqDataArray+i+kmerLen, isComputed);
         if (!isComputed) continue;
         hashVal &= hashIndBits;
         
@@ -95,17 +95,4 @@ void HashComputation::computeHashesForSeq(ULL seqIndex,
     }
     
     delete seq;
-}
-
-unsigned HashComputation::hash(const char *startPos,
-                               const char *endPos,
-                               bool& isComputed) {
-    unsigned hash = 0;
-    isComputed = false;
-    
-    for (const char* it = startPos; it != endPos; it++) {
-        if(*it < 4) {hash = 65599 * hash + *it; isComputed = true; }
-    }
-    
-    return hash ^ (hash >> 16);
 }
