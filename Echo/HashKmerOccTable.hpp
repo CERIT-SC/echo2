@@ -8,7 +8,7 @@
 
 /*
  Table in which all occurrences of given K-mer represented by hash
- are strored.
+ are stored.
  */
 
 
@@ -44,7 +44,6 @@ public:
     virtual unsigned getOccurrCount(ULL hash) const = 0;
     virtual Occur getOccurr(ULL hash, unsigned index) const = 0;
     
-    //virtual void sortTable() = 0;
     virtual void clear() = 0;
     virtual void shrink_to_fit(unsigned numberOfThreads) = 0;
 };
@@ -134,16 +133,6 @@ Occur HashKmerOccTable_Impl<KmerOccType>::getOccurr(ULL hash, unsigned index) co
     
     return Occur(result.getId(), result.getPos());
 }
-
-//template <class KmerOccType>
-//void HashKmerOccTable_Impl<KmerOccType>::sortTable() {
-//    for (auto &hash: table) {
-//        
-//        sort(hash.begin(), hash.end(),
-//                  [](KmerOccType& first, KmerOccType& second)
-//                        {return first.getId() < second.getId();});
-//    }
-//}
 
 template <class KmerOccType>
 void HashKmerOccTable_Impl<KmerOccType>::clear() {
