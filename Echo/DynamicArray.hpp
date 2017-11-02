@@ -162,10 +162,6 @@ void DynamicArray<ArrType>::reallocate(unsigned newCapacity) {
     ArrType * newArray = new ArrType[newCapacity];
     capacity = newCapacity;
     
-    //for (unsigned i = 0; i < _size; i++) {
-    //    newArray[i] = array[i];
-    //}
-    
     move(array, array+_size, newArray);
     
     if(array) delete [] array;
