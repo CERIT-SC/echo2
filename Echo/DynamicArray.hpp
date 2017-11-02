@@ -27,7 +27,7 @@ using namespace std;
 template <class ArrType>
 class DynamicArray {
     ArrType* array;
-    unsigned _size, capacity;
+    unsigned _size, _capacity;
     
     void operator=(const DynamicArray&); //copy forbidden
 public:
@@ -42,6 +42,7 @@ public:
     void push_back(const ArrType& element);
     unsigned size() const;
     void reserve(unsigned newCapacity);
+    unsigned capacity();
     void resize(unsigned size);
     void shrink_to_fit();
     
@@ -60,7 +61,7 @@ private:
 template <class ArrType>
 DynamicArray<ArrType>::DynamicArray() {
     array = nullptr;
-    _size = capacity = 0;
+    _size = _capacity = 0;
 }
 
 template <class ArrType>
@@ -74,13 +75,13 @@ DynamicArray<ArrType>::DynamicArray(unsigned capacity) {
 template <class ArrType>
 DynamicArray<ArrType>::DynamicArray(const DynamicArray& arr) {
     if (!arr.array) {
-        _size = capacity = 0;
+        _size = _capacity = 0;
         array = nullptr;
         return;
     }
     
     array = new ArrType[arr._size];
-    _size = capacity = arr._size;
+    _size = _capacity = arr._size;
     
     for (unsigned i = 0; i < _size; i++) {
         array[i] = arr.array[i];
@@ -111,8 +112,8 @@ void DynamicArray<ArrType>::push_back(const ArrType& element) {
     if (_size == numeric_limits<unsigned>::max()) throw length_error("DynamicArray: max length exceeded.");
     
     if (!array) reallocate(1);
-    if (_size == capacity) {
-        if (capacity <= numeric_limits<unsigned>::max()/2) reallocate(capacity*2);
+    if (_size == _capacity) {
+        if (_capacity <= numeric_limits<unsigned>::max()/2) reallocate(_capacity*2);
         else reallocate(numeric_limits<unsigned>::max());
     }
     
@@ -132,6 +133,11 @@ void DynamicArray<ArrType>::reserve(unsigned newCapacity) {
 }
 
 template <class ArrType>
+unsigned DynamicArray<ArrType>::capacity() {
+    return _capacity;
+}
+
+template <class ArrType>
 void DynamicArray<ArrType>::resize(unsigned size) {
     assert(size <= _size);
     
@@ -140,7 +146,7 @@ void DynamicArray<ArrType>::resize(unsigned size) {
 
 template <class ArrType>
 void DynamicArray<ArrType>::shrink_to_fit() {
-    if(capacity > _size) reallocate(_size);
+    if(_capacity > _size) reallocate(_size);
 }
 
 template <class ArrType>
@@ -157,10 +163,10 @@ ArrType* DynamicArray<ArrType>::end() {
 template <class ArrType>
 void DynamicArray<ArrType>::reallocate(unsigned newCapacity) {
     if (newCapacity < _size) return;
-    if (capacity == newCapacity) return;
+    if (_capacity == newCapacity) return;
     
     ArrType * newArray = new ArrType[newCapacity];
-    capacity = newCapacity;
+    _capacity = newCapacity;
     
     move(array, array+_size, newArray);
     
