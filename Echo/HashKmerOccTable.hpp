@@ -18,6 +18,7 @@
 #include <vector>
 #include <thread>
 #include <algorithm>
+#include <atomic>
 
 #include "KmerOccurrence.hpp"
 #include "DynamicArray.hpp"
@@ -38,6 +39,7 @@ public:
     
     virtual void setSize(ULL size, unsigned hashCapacity = 0) = 0;
     virtual ULL getSize() const = 0;
+    virtual void allocate(vector<atomic<unsigned>> &sizeArray) = 0;
     virtual void add(ULL hash, ULL seqId, unsigned pos) = 0;
     virtual void exchange(ULL hash, ULL seqId, unsigned pos) = 0;
    
@@ -59,6 +61,7 @@ public:
     
     virtual void setSize(ULL size, unsigned hashCapacity = 0);
     virtual ULL getSize() const;
+    virtual void allocate(vector<atomic<unsigned>> &sizeArray);
     virtual void add(ULL hash, ULL seqId, unsigned pos);
     virtual void exchange(ULL hash, ULL seqId, unsigned pos);
     
@@ -95,6 +98,14 @@ void HashKmerOccTable_Impl<KmerOccType>::setSize(ULL size, unsigned hashCapacity
 template <class KmerOccType>
 ULL HashKmerOccTable_Impl<KmerOccType>::getSize() const {
     return table.size();
+}
+
+template <class KmerOccType>
+void HashKmerOccTable_Impl<KmerOccType>::
+allocate(vector<atomic<unsigned>> &sizeArray) {
+    for (ULL i = 0; i < table.size(); i++) {
+        table[i].reserve(sizeArray[i]);
+    }
 }
 
 template <class KmerOccType>
