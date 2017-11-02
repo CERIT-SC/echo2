@@ -17,6 +17,7 @@
 #include "HashKmerOccTable.hpp"
 #include "RandomisedAccess.hpp"
 #include "KmerOccurrence.hpp"
+#include "AllocComputation.hpp"
 #include "HashComputation.hpp"
 #include "Params.hpp"
 #include "GlobalSettings.hpp"
@@ -39,22 +40,10 @@ public:
     HashPtr operator()(unsigned numberOfThreads) {
         logger.log("Hashing phase (2/4)");
         
-        //1) run the computation to find out how much space needs to be allocated
-        logger.log("Computing memory needs");
-        
-        //2) allocate table exactly
-        logger.log("Allocating memory");
-        
-        //3) run computation again and save results to table
-        logger.log("Computing hashes");
-        
-        
-        
-        
-        
         //create hash table
-        HashPtr hash = chooseTableVersion(seqRandAcc.size());
+        HashPtr hashTable = chooseTableVersion(seqRandAcc.size());
         ULL hashTableSize = getHashSize();
+        hashTable->setSize(hashTableSize);
         
         //log table size
         string message("Size of hash table: 2^");
@@ -63,17 +52,27 @@ public:
         if (tableSizeIndex == HASH_TABLE_SIZE_EXP_MAX) message += " (maximum)";
         if (tableSizeIndex == HASH_TABLE_SIZE_EXP_MIN) message += " (minimum)";
         logger.log(message);
-    
-        hash->setSize(hashTableSize);
         
-        //compute hashes-occurrences
+        
+        //1) compute how much space needs to be allocated
+        logger.log("Computing memory needs");
+        AllocComputation allocComputation(seqRandAcc, params.maxSeqLength,
+                                          params.kmerLength);
+        vector<atomic<unsigned>> counterArray;
+        counterArray = allocComputation(hashTableSize, numberOfThreads);
+        
+        //2) allocate table
+        logger.log("Allocating memory");
+        hashTable->allocate(counterArray);
+        
+        //3) compute hashes
+        logger.log("Computing hashes");
+        
         HashComputation hashComputation(seqRandAcc, params.maxSeqLength, params.kmerLength);
-        hashComputation(hash, numberOfThreads);
-        
-        hash->shrink_to_fit(min(numberOfThreads, 4u));
+        hashComputation(hashTable, numberOfThreads);
         
         logger.log("Hashing complete.");
-        return hash;
+        return hashTable;
     }
     
 private:
