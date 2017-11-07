@@ -65,7 +65,6 @@ public:
     virtual unsigned getOccurrCount(ULL hash) const;
     virtual Occur getOccurr(ULL hash, unsigned index) const;
     
-    //virtual void sortTable();
     virtual void clear();
     virtual void shrink_to_fit(unsigned numberOfThreads);
     
