@@ -47,9 +47,7 @@ public:
     virtual Occur getOccurr(ULL hash, unsigned index) const = 0;
     
     virtual void clear() = 0;
-    virtual void shrink_to_fit(unsigned numberOfThreads) = 0;
 };
-
 
 
 template<class KmerOccType>
@@ -69,13 +67,7 @@ public:
     virtual Occur getOccurr(ULL hash, unsigned index) const;
     
     virtual void clear();
-    virtual void shrink_to_fit(unsigned numberOfThreads);
-    
-private:
-    void shrinkSection(ULL startIndex, ULL stopIndex);
-    
 };
-
 
 
 
@@ -148,38 +140,6 @@ template <class KmerOccType>
 void HashKmerOccTable_Impl<KmerOccType>::clear() {
     table.clear();
     table.shrink_to_fit();
-}
-
-template <class KmerOccType>
-void HashKmerOccTable_Impl<KmerOccType>::shrink_to_fit(unsigned numberOfThreads) {
-    assert(numberOfThreads != 0);
-    
-    //launch shrinking in multiple threads
-    vector<thread> threads(numberOfThreads);
-    ULL sectStart = 0;
-    ULL sectSize = table.size()/numberOfThreads;
-    
-    for (auto thr = threads.begin(); thr != threads.end(); thr++) {
-        *thr = thread(&HashKmerOccTable_Impl<KmerOccType>::shrinkSection, this, sectStart, sectStart+sectSize);
-        sectStart+=sectSize;
-    }
-    
-    //wait for them to finish
-    for (auto thr = threads.begin(); thr != threads.end(); thr++) {
-        thr->join();
-    }
-    
-    //fix remainder
-    shrinkSection(sectStart, table.size());
-}
-
-//PRIVATE
-template <class KmerOccType>
-void HashKmerOccTable_Impl<KmerOccType>::shrinkSection(ULL startIndex, ULL stopIndex) { //computed for [start,stop)
-    
-    for (ULL index = startIndex; index < stopIndex; index++) {
-        table[index].shrink_to_fit();
-    }
 }
 
 #endif /* defined(__EchoErrorCorrection__HashKmerOccTable__) */
