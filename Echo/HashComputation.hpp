@@ -19,6 +19,7 @@
 #include "RandomisedAccess.hpp"
 #include "HashKmerOccTable.hpp"
 #include "Mutex.hpp"
+#include "Tools.hpp"
 #include "debug.hpp"
 using namespace std;
 
@@ -46,7 +47,6 @@ private:
     void computeHashesForSeq(ULL seqIndex,
                              char* seqDataArray,
                              vector<unsigned>& added);
-    unsigned hash(const char * startPos, const char *endPos, bool& isComputed);
 };
 
 

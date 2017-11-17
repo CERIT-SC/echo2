@@ -22,6 +22,12 @@ using namespace std;
 
 typedef unsigned long long ULL;
 
+
+unsigned getHash(const char *startPos,
+                  const char *endPos,
+                  bool& isComputed);
+
+
 class N44Matrix {
     vector<double*> matrix;
     

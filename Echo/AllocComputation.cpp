@@ -1,21 +1,25 @@
- //
-//  HashComputation.cpp
-//  EchoErrorCorrection
 //
-//  Created by Miloš Šimek on 15/09/13.
-//  Copyright (c) 2013 Miloš Šimek. All rights reserved.
+//  AllocComputation.cpp
+//  Echo
+//
+//  Created by Miloš Šimek on 01/11/2017.
+//  Copyright © 2017 Miloš Šimek. All rights reserved.
 //
 
-#include "HashComputation.hpp"
+#include "AllocComputation.hpp"
 
-void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
+
+vector<atomic<unsigned>>
+AllocComputation::operator()(ULL hashSize, unsigned numberOfThreads) {
     assert(numberOfThreads > 0);
     
-    mutexes.resize(hashTable->getSize());
-    this->hashTable = hashTable;
+    //create atomic array for counting
+    vector<atomic<unsigned>> atomicArray(hashSize);
+    for (auto &i: atomicArray) i = 0;
+    this->counterArray = move(atomicArray);
     
     //compute allowed bits for hash indexes
-    short exp = log(hashTable->getSize())/log(2);
+    short exp = log(hashSize)/log(2);
     hashIndBits = numeric_limits<unsigned>::max();
     hashIndBits >>= 32 - exp;
     
@@ -25,7 +29,7 @@ void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
     ULL sectSize = seqRandAcc.size()/numberOfThreads;
     
     for (auto it = threads.begin(); it != threads.end(); it++) {
-        *it = thread(&HashComputation::computeHashesForSection, this,
+        *it = thread(&AllocComputation::computeHashesForSection, this,
                      sectStart, sectStart+sectSize);
         sectStart += sectSize;
     }
@@ -37,9 +41,11 @@ void HashComputation::operator()(HashPtr hashTable, unsigned numberOfThreads) {
     
     //compute remainder
     computeHashesForSection(sectStart, seqRandAcc.size());
+    
+    return move(this->counterArray);
 }
 
-void HashComputation::computeHashesForSection(ULL startIndex, ULL endIndex) {
+void AllocComputation::computeHashesForSection(ULL startIndex, ULL endIndex) {
     //initialize arrays in thread only once (for speed)
     shared_ptr<char> seqData = shared_ptr<char>(new char[maxSeqLen],
                                                 [](char* p){ delete [] p; });
@@ -51,7 +57,7 @@ void HashComputation::computeHashesForSection(ULL startIndex, ULL endIndex) {
     }
 }
 
-void HashComputation::computeHashesForSeq(ULL seqIndex,
+void AllocComputation::computeHashesForSeq(ULL seqIndex,
                                           char* seqDataArray,
                                           vector<unsigned>& added) {
     Interpreter* seq = seqRandAcc[seqIndex];
@@ -76,22 +82,10 @@ void HashComputation::computeHashesForSeq(ULL seqIndex,
         //check if this sequence allready have this hash
         if (find(added.begin(), added.end(), hashVal) == added.end()) {
             added.push_back(hashVal);
-        } else {
-            //if hashes are equal, keep occurrences from beginning of the
-            //sequence
-            if (!seq->isCompl()) continue;
-            else {  //or from end of the complement
-                mutexes[hashVal].lock();
-                hashTable->exchange(hashVal, seqIndex, i);
-                mutexes[hashVal].unlock();
-                continue;
-            }
-        }
+        } else continue;
         
-        //add occurrence
-        mutexes[hashVal].lock();
-        hashTable->add(hashVal, seqIndex, i);
-        mutexes[hashVal].unlock();
+        //count occurrence
+        counterArray[hashVal]++;   //atomic operation
     }
     
     delete seq;
