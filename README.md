@@ -151,12 +151,25 @@ This implementation was created by **Miloš Šimek** at
 You can email me at <simek@ics.muni.cz>.
 
 ## Acknowledgments
+This work was supported by projects CERIT Scientific Cloud (LM2015085), CESNET (LM2015042), and ELIXIR-CZ project (LM2015047) in the programme "Projects of Large Research, Development, and Innovations Infrastructures".
 I would like to thank Aleš Křenek who made this project possible.
 
+Cite **TODO** when using this work.
+
+The code presented here was written from scratch, however, it is heavily based on ideas of ECHO 1.12, see
+
+Wei-Chun Kao1, Andrew H. Chan1 and Yun S. Song. _ECHO: A reference-free short-read error correction algorithm._ Genome Res. 2011. 21: 1181-1192, http://www.genome.org/cgi/doi/10.1101/gr.111351.11
+
 ## Copyright
+
+Copyright (c) [Institute of Computer Science, Masaryk university](http://www.ics.muni.cz/), and [CESNET, z.s.p.o.](http://www.cesnet.cz).
+
 This project is licensed under Creative Commons 4.0 International
 license (CC BY 4.0). Summary of the license can be found
 [here][lshort], the license itself can be found [here][llong].
 
 [lshort]: https://creativecommons.org/licenses/by/4.0/
 [llong]:  https://creativecommons.org/licenses/by/4.0/legalcode
+
+### Original ECHO 1.12 license and copyright
+**TODO** 
