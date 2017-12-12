@@ -152,17 +152,23 @@ You can email me at <simek@ics.muni.cz>.
 
 ## Acknowledgments
 This work was supported by projects CERIT Scientific Cloud (LM2015085), CESNET (LM2015042), and ELIXIR-CZ project (LM2015047) in the programme "Projects of Large Research, Development, and Innovations Infrastructures".
+
 I would like to thank Aleš Křenek who made this project possible.
 
 Cite **TODO** when using this work.
 
-The code presented here was written from scratch, however, it is heavily based on ideas of ECHO 1.12, see
+The code presented here was written from scratch, however, it is heavily based on ideas of ECHO 1.12, see:
 
-Wei-Chun Kao1, Andrew H. Chan1 and Yun S. Song. _ECHO: A reference-free short-read error correction algorithm._ Genome Res. 2011. 21: 1181-1192, http://www.genome.org/cgi/doi/10.1101/gr.111351.11
+> Wei-Chun Kao1, Andrew H. Chan1 and Yun S. Song.
+> [ECHO: A reference-free short-read error correction algorithm.][orig echo publ]
+> Genome Res. 2011. 21: 1181-1192
+
+[orig echo publ]: https://www.ncbi.nlm.nih.gov/pubmed/21482625
 
 ## Copyright
 
-Copyright (c) [Institute of Computer Science, Masaryk university](http://www.ics.muni.cz/), and [CESNET, z.s.p.o.](http://www.cesnet.cz).
+Copyright (c) [Institute of Computer Science, Masaryk university](http://www.ics.muni.cz/), 
+and [CESNET, z.s.p.o.](http://www.cesnet.cz).
 
 This project is licensed under Creative Commons 4.0 International
 license (CC BY 4.0). Summary of the license can be found
@@ -172,4 +178,27 @@ license (CC BY 4.0). Summary of the license can be found
 [llong]:  https://creativecommons.org/licenses/by/4.0/legalcode
 
 ### Original ECHO 1.12 license and copyright
-**TODO** 
+
+Copyright (c) 2011, Yun S. Song  
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+- Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
