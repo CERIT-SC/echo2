@@ -159,7 +159,7 @@ Cite **TODO** when using this work.
 
 The code presented here was written from scratch, however, it is heavily based on ideas of ECHO 1.12, see:
 
-> Wei-Chun Kao1, Andrew H. Chan1 and Yun S. Song.
+> Wei-Chun Kao, Andrew H. Chan and Yun S. Song.
 > ECHO: A reference-free short-read error correction algorithm.
 > Genome Res. 2011. 21: 1181-1192. https://doi.org/10.1101/gr.111351.110
 
