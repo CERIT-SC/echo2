@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "RandomisedAccessTests.h"
+#include "RandomisedAccessTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(RandomisedAccessTests);
 #include <iostream>

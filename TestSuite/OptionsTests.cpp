@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "OptionsTests.h"
+#include "OptionsTests.hpp"
 #include <string>
 #include <vector>
 using namespace std;

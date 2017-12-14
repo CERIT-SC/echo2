@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "Sequence.h"
+#include "Sequence.hpp"
 
 //SEQUENCE
 Sequence::Sequence() {

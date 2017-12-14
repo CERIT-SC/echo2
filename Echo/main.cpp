@@ -13,21 +13,21 @@
 #include <stdexcept>
 #include <iomanip>
 
-#include "Sequence.h"
-#include "RandomisedAccess.h"
-#include "Options.h"
-#include "MessageLogger.h"
-#include "HashKmerOccTable.h"
-#include "Params.h"
-#include "GlobalSettings.h"
-#include "Tools.h"
-#include "FastqSave.h"
+#include "Sequence.hpp"
+#include "RandomisedAccess.hpp"
+#include "Options.hpp"
+#include "MessageLogger.hpp"
+#include "HashKmerOccTable.hpp"
+#include "Params.hpp"
+#include "GlobalSettings.hpp"
+#include "Tools.hpp"
+#include "FastqSave.hpp"
 
 //phases
-#include "Preprocessing.h"
-#include "Hashing.h"
-#include "ParameterSelection.h"
-#include "ErrorCorrection.h"
+#include "Preprocessing.hpp"
+#include "Hashing.hpp"
+#include "ParameterSelection.hpp"
+#include "ErrorCorrection.hpp"
 
 using namespace std;
 
@@ -141,6 +141,7 @@ unsigned processFiles(Options& options, MessageLogger& logger) {
         
         RandomisedAccess& seqRandAccess = *randAccessPtr;
         Params params = setParams(options, seqArray);
+        logger.log("K-mer length: " + to_string(params.kmerLength));
         
         //hashing
         Hashing hashing(logger, seqRandAccess, params);

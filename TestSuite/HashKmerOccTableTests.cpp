@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "HashKmerOccTableTests.h"
+#include "HashKmerOccTableTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(HashKmerOccTableTests);
 

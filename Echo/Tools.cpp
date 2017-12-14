@@ -6,7 +6,21 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "Tools.h"
+#include "Tools.hpp"
+
+unsigned getHash(const char *startPos,
+                 const char *endPos,
+                 bool& isComputed) {
+    unsigned hash = 0;
+    isComputed = false;
+    
+    for (const char* it = startPos; it != endPos; it++) {
+        if(*it < 4) {hash = 65599 * hash + *it; isComputed = true; }
+    }
+    
+    return hash ^ (hash >> 16);
+}
+
 
 //N44MATRIX
 N44Matrix::N44Matrix(unsigned length) {

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
-#include "SequenceFileLoader.h"
+#include "SequenceFileLoader.hpp"
 
 SequenceFileLoader::SequenceFileLoader() {}
 
@@ -60,7 +60,7 @@ void SequenceFileLoader::loadStandardFile(vector<Sequence>& seqArray) {
 void SequenceFileLoader::loadFastqFile(vector<Sequence>& seqArray) {
     string seq;
     streamsize unlimited = numeric_limits<streamsize>::max();
-    char ch;
+    char ch = 0;
     
     try {
     while (!inputFile.eof()) {

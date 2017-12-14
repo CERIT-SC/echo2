@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
-#include "NeighbourTableTests.h"
+#include "NeighbourTableTests.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(NeighbourTableTests);
 
