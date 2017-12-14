@@ -155,7 +155,9 @@ This work was supported by projects CERIT Scientific Cloud (LM2015085), CESNET (
 
 I would like to thank Aleš Křenek who made this project possible.
 
-Cite **TODO** when using this work.
+Cite this when using this work:
+
+> Citation to the paper will be added here after publication.
 
 The code presented here was written from scratch, however, it is heavily based on ideas of ECHO 1.12, see:
 
