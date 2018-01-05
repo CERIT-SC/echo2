@@ -96,10 +96,12 @@ public:
         params.maxCov = max(3u, static_cast<unsigned>(ceil(estCov + 5*pow(estCov, 0.5))));
         
         //log parameters
-        string message = string("Selected parameters: estimated coverage - ") + to_string(params.estCov) + ", ";
-        message += string("maximum coverage - ") + to_string(params.maxCov) + ", ";
-        message += string("overlap - ") + to_string(params.besth) + ", ";
-        message += string("error tolerance - ") + to_string(params.beste);
+        string filler(25, ' ');
+        string message("Selected parameters:\n");
+        message += filler + string("Estimated coverage - ") + to_string(params.estCov) + "\n";
+        message += filler + string("Maximum coverage - ") + to_string(params.maxCov) + "\n";
+        message += filler + string("Overlap - ") + to_string(params.besth) + "\n";
+        message += filler + string("Error tolerance - ") + to_string(params.beste);
         logger.log(message);
         
         logger.log("Estimating confusion matrix.");
