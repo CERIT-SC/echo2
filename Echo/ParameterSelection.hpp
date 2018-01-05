@@ -98,10 +98,10 @@ public:
         //log parameters
         string filler(25, ' ');
         string message("Selected parameters:\n");
-        message += filler + string("Estimated coverage - ") + to_string(params.estCov) + "\n";
-        message += filler + string("Maximum coverage - ") + to_string(params.maxCov) + "\n";
-        message += filler + string("Overlap - ") + to_string(params.besth) + "\n";
-        message += filler + string("Error tolerance - ") + to_string(params.beste);
+        message += filler + string("Estimated coverage: ") + to_string(params.estCov) + "\n";
+        message += filler + string("Maximum coverage: ") + to_string(params.maxCov) + "\n";
+        message += filler + string("Overlap: ") + to_string(params.besth) + "\n";
+        message += filler + string("Error tolerance: ") + to_string(params.beste);
         logger.log(message);
         
         logger.log("Estimating confusion matrix.");
