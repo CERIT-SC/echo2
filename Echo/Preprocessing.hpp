@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <algorithm>
 
 #include "MessageLogger.hpp"
 #include "Sequence.hpp"
@@ -35,7 +36,7 @@ public:
         
         if(!loadInputFile(seqArray)) return false;
         
-        logger.log(string("Number of sequences: ") + to_string(seqArray.size()));
+        logger.log(string("Number of sequences: ") + separateThousands(to_string(seqArray.size())));
         
         seqArray.shrink_to_fit();
         
@@ -68,6 +69,26 @@ private:
         
         logger.log("Input file loaded.");
         return true;
+    }
+    
+    string separateThousands(string input) {
+        reverse(input.begin(), input.end());
+        
+        istringstream i(input);
+        string result;
+        
+        int count = 0;
+        while(i.peek() != EOF) {
+            count++;
+            if (count % 4 == 0) {
+                result.push_back(',');
+                continue;
+            }
+            result.push_back(static_cast<char>(i.get()));
+        }
+        
+        reverse(result.begin(), result.end());
+        return result;
     }
 };
 
