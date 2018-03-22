@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 01/07/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #ifndef __EchoErrorCorrection__PoissonTests_h__

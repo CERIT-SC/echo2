@@ -3,7 +3,6 @@
 //  TestSuite-Intensive
 //
 //  Created by Miloš Šimek on 09/02/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #include <cppunit/CompilerOutputter.h>

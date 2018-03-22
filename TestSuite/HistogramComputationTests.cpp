@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 19/2/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #include "HistogramComputationTests.hpp"

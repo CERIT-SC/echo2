@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 12/02/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #ifndef __EchoErrorCorrection__NeighbourFinderTests__

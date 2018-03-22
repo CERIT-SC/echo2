@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 09/09/13.
-//  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
 #include "MessageLogger.hpp"

@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 12/1/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #ifndef EchoErrorCorrection_GlobalSettings_h

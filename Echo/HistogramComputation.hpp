@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 18/2/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #ifndef __EchoErrorCorrection__HistogramComputation__

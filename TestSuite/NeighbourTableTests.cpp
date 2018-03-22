@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 11/02/14.
-//  Copyright (c) 2014 Miloš Šimek. All rights reserved.
 //
 
 #include "NeighbourTableTests.hpp"

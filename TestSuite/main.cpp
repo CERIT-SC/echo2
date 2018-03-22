@@ -3,7 +3,6 @@
 //  TestSuite
 //
 //  Created by Miloš Šimek on 21/11/13.
-//  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
 #include <cppunit/CompilerOutputter.h>

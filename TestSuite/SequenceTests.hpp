@@ -3,7 +3,6 @@
 //  EchoErrorCorrection
 //
 //  Created by Miloš Šimek on 24/11/13.
-//  Copyright (c) 2013 Miloš Šimek. All rights reserved.
 //
 
 #ifndef __EchoErrorCorrection__SequenceTests__
