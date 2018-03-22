@@ -16,7 +16,6 @@
 #include <limits>
 using namespace std;
 
-//void poissonTotalVar(vector<double> histogram, unsigned& estMean, double& estTotalVar);
 void poissonDistEstimation(vector<double> distribution, unsigned& estimMean, double& variation);
 
 vector<long double> poissonDist(unsigned len, unsigned mean);
